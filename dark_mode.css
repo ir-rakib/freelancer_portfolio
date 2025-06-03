@@ -26,45 +26,56 @@
     body.light-mode .datetime-section i {
       color: #000; /* Black font for nav icons in light mode */
       }
-      body.light-mode .navbar {
-        position: fixed;
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: #dbe8fb;
+      
+    body.light-mode .navbar {
+      position: fixed;
+        top: 50%;
+        left: 20px;
+        transform: translateY(-50%);
+        background: #f4f8ff;
         backdrop-filter: blur(20px);
-        border: 1px solid rgba(5, 0, 0, 0.1);
-        border-radius: 50px;
-        padding: 15px 30px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 25px;
+        padding: 20px 10px;
         z-index: 1000;
         transition: all 0.3s ease;
-      }
-      body.light-mode .navbar:hover {
-        box-shadow: var(--glow);
-        transform: translateX(-50%) translateY(-2px);
-      }
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+    body.light-mode .navbar:hover {
+       box-shadow: var(--glow);
+       transform: translateY(-50%) translateX(5px);
+    }
 
       body.light-mode .navbar ul {
         display: flex;
+        flex-direction: column;
         list-style: none;
-        gap: 30px;
-        color: whitesmoke;
+        gap: 25px;
+        margin: 0;
+        padding: 0;
+        align-items: center;
       }
 
       body.light-mode .navbar a {
-        color: #000; /* Black font for nav links in light mode */
+        color: var(--text);
         text-decoration: none;
-        font-weight: 500;
         transition: all 0.3s ease;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
         position: relative;
-        padding: 8px 16px;
-        border-radius: 25px;
       }
 
       body.light-mode .navbar a:hover {
         background: #e3ecfb;
-        color: #014284; /* White font on hover */
-        transform: translateY(-2px);
+        color: var(--primary);
+        transform: scale(1.1);
       }
 
     body.light-mode .social-float a {
@@ -87,3 +98,61 @@
       transform: translateX(-5px) scale(1.1);
       box-shadow: var(--glow);
     }
+
+    body.light-mode .software-skill-item i {
+  font-size: 2.8rem;
+  transition: all 0.3s ease;
+  color: #754FA8; /* Set icon color to white */
+}
+
+    body.light-mode .software-skill-item span {
+    margin-top: 12px;
+    font-weight: 500;
+    color: #754FA8; /* Changed from #334155 to white */
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    }
+
+        /* Contact Form */
+    body.light-mode .contact-form-form {
+            flex: 1;
+            padding: 20px;
+        }
+
+        body.light-mode .form-group {
+            margin-bottom: 25px;
+        }
+
+        body.light-mode .form-group input,
+        body.light-mode .form-group textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid #000; /* Set border to black */
+            border-radius: 10px;
+            color: var(--text);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        body.light-mode .form-group input::placeholder,
+        body.light-mode .form-group textarea::placeholder {
+            color: var(--text-muted);
+        }
+
+        body.light-mode .form-group input:focus,
+        body.light-mode .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+
+        body.light-mode .form-group input:hover,
+        body.light-mode .form-group textarea:hover {
+            border-color: var(--primary); /* Change border on hover */
+        }
+
+        body.light-mode .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
