@@ -1441,51 +1441,64 @@
     }
 }
 
-/* Fix for potential horizontal overflow if not already handled */
-html, body {
-    overflow-x: hidden;
-    width: 100%;
-}
-/* === Only for mobile screens === */
+/* smartphone setup */
 @media (max-width: 768px) {
+  .work-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 
-  /* My Work Section: Enable horizontal scroll only on mobile */
   .work-slides {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
     gap: 16px;
     padding-bottom: 10px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
   }
 
   .work-slide {
+    flex: 0 0 85%;
     scroll-snap-align: start;
-    min-width: 85%;
-    flex-shrink: 0;
+    border-radius: 12px;
   }
 
   .work-card {
     width: 100%;
   }
 
+  .work-nav {
+    flex-shrink: 0;
+    margin-top: 10px;
+  }
+}
+
+
   /* Technical Skills: Responsive stacking */
+@media (max-width: 768px) {
   .skills-grid {
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
   }
 
   .skill-item {
-    flex: 1 1 45%;
+    width: 45%;
     max-width: 180px;
-    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .skill-circle {
+    margin: 0 auto;
   }
 
   .skill-circle svg {
     width: 100%;
     height: auto;
   }
+}
+
 
   /* Language Skills: Center the section */
   .skills-container {
@@ -1503,6 +1516,47 @@ html, body {
     justify-content: space-between;
     width: 90%;
     margin: 0 auto;
+  }
+/* Navbar: Responsive bottom navbar */
+@media (max-width: 768px) {
+  .navbar {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    padding: 8px 0;
+  }
+
+  .navbar ul {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .navbar ul li {
+    flex: 1;
+    text-align: center;
+  }
+
+  .navbar ul li a {
+    font-size: 18px;
+    display: block;
+    color: white;
+  }
+
+  body.light-theme .navbar {
+    background: #fff !important;
+  }
+
+  body.light-theme .navbar ul li a {
+    color: #111 !important;
   }
 }
 
