@@ -1206,3 +1206,244 @@
     transform: translateX(-50%) translateY(0);
   }
 }
+/* Additional Responsive Styles */
+
+@media (max-width: 768px) {
+  /* Reduce section padding further */
+  .section {
+    padding: 60px 15px; /* Adjusted padding */
+  }
+
+  /* Adjust work slider for tablets */
+  .work-slide {
+    flex: 0 0 calc(50% - 20px); /* Show 2 slides */
+  }
+
+  /* Stack education header */
+  .education-header {
+    flex-direction: column;
+    align-items: flex-start; /* Align items to start */
+    gap: 5px; /* Add gap between stacked items */
+  }
+  .education-date {
+     margin-top: 5px; /* Add space above date */
+  }
+
+  /* Adjust stats grid for better spacing */
+   .about-stats {
+      grid-template-columns: 1fr; /* Stack stats cards */
+      gap: 20px;
+   }
+   .stat-card {
+       padding: 20px;
+   }
+   .stat-number {
+       font-size: 2.5rem;
+   }
+
+   /* Adjust services grid min width */
+   .services-grid {
+       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+       gap: 20px;
+   }
+   .service-card {
+       padding: 30px;
+   }
+
+   /* Adjust skills grid */
+    .skills-grid {
+        gap: 20px;
+    }
+    .skill-circle {
+        width: 100px;
+        height: 100px;
+    }
+    .skill-percentage {
+        font-size: 1.2rem;
+    }
+    .skill-item h3 {
+        font-size: 1rem; /* Adjust skill title size */
+    }
+
+    /* Adjust software skills grid */
+    .software-skills-grid {
+        gap: 20px; /* Reduce gap */
+    }
+    .software-skill-item {
+        width: 80px; /* Reduce item width */
+    }
+    .software-skill-item i {
+        font-size: 2.2rem; /* Reduce icon size */
+    }
+    .software-skill-item span {
+        font-size: 0.9rem; /* Reduce text size */
+    }
+
+    /* Adjust testimonials */
+    .testimonials-container {
+        height: auto; /* Adjust height */
+        padding: 0 10px; /* Add padding */
+    }
+    .testimonial-item {
+        padding: 30px;
+        position: relative; /* Change from absolute for flow */
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        margin-bottom: 20px; /* Add space between items if they stack */
+    }
+    .testimonial-item.active { /* Remove active state styling if stacking */
+       /* No specific active styles needed if stacking */
+    }
+    .testimonial-text {
+        font-size: 1rem; /* Adjust text size */
+    }
+    .testimonial-avatar {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    /* Hide testimonial nav if stacking */
+    .testimonial-nav {
+        display: none;
+    }
+
+    /* Add padding to body bottom to avoid overlap with fixed nav */
+    body {
+        padding-bottom: 80px; /* Space for bottom navbar */
+    }
+}
+
+@media (max-width: 576px) {
+  /* Adjust hero text */
+   .hero h1 {
+      font-size: clamp(2.5rem, 10vw, 3.5rem); /* Further adjust clamp */
+   }
+   .typing {
+      font-size: 1.3rem;
+   }
+   .hero p {
+       font-size: 1rem;
+   }
+   .hero-cta {
+       gap: 10px;
+   }
+   .btn {
+       padding: 12px 24px;
+       font-size: 0.9rem;
+   }
+
+  /* Adjust work slider for smaller phones */
+  .work-slide {
+    flex: 0 0 calc(100% - 20px); /* Show 1 slide */
+  }
+
+  /* Further reduce section padding */
+  .section {
+    padding: 40px 10px;
+  }
+  .section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  .section h2::after {
+      width: 70px;
+      height: 3px;
+  }
+
+  /* Adjust services grid further */
+   .services-grid {
+       grid-template-columns: 1fr; /* Stack service cards */
+       gap: 15px;
+   }
+   .service-card {
+       padding: 25px;
+   }
+   .service-card i {
+       font-size: 2.5rem;
+   }
+    .service-card h3 {
+        font-size: 1.3rem;
+    }
+
+   /* Adjust skills grid */
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust minmax */
+        gap: 15px;
+    }
+
+    /* Adjust software skills grid */
+    .software-skills-grid {
+        gap: 15px; /* Reduce gap */
+    }
+    .software-skill-item {
+        width: 70px; /* Reduce item width */
+    }
+    .software-skill-item i {
+        font-size: 2rem; /* Reduce icon size */
+    }
+    .software-skill-item span {
+        font-size: 0.8rem; /* Reduce text size */
+    }
+
+    /* Adjust contact form padding */
+    .contact-form {
+        padding: 20px;
+    }
+    .form-group input,
+    .form-group textarea {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+
+    /* Adjust theme toggle position */
+    .theme-toggle {
+        top: 15px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+    }
+    .theme-toggle i {
+        font-size: 1rem; /* Adjust icon size */
+    }
+
+    /* Adjust social float position and size */
+    .social-float {
+        bottom: 75px; /* Adjust position relative to nav */
+        right: 10px;
+        gap: 10px;
+    }
+    .social-float a {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+
+    /* Adjust bottom navbar */
+    .navbar {
+        padding: 6px 10px;
+        bottom: 10px; /* Closer to bottom */
+    }
+    .navbar ul {
+        gap: 8px;
+    }
+    .navbar a {
+        width: 32px;
+        height: 32px;
+    }
+    .navbar a::before {
+        font-size: 0.9rem;
+    }
+
+    /* Adjust body padding for smaller nav */
+    body {
+        padding-bottom: 60px; /* Reduced space for smaller bottom navbar */
+    }
+}
+
+/* Fix for potential horizontal overflow if not already handled */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
