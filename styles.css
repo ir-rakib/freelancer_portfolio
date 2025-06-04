@@ -1197,107 +1197,221 @@
 }
 
 /* smartphone setup */
-/* ===== General Content Alignment Fix ===== */
-@media (max-width: 768px) {
-  /* Main container padding */
-  .section {
-    padding: 40px 20px !important;
-  }
-  
-  /* About Me section */
-  .about-text {
-    text-align: left !important;
-    max-width: 100% !important;
-    margin: 0 auto !important;
-    padding: 0 10px !important;
-  }
-  
-  /* Stats grid */
-  .about-stats {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 20px !important;
-    padding: 0 10px !important;
-    margin: 30px auto !important;
-    max-width: 100% !important;
-  }
-  
-  .stat-item {
-    text-align: center !important;
-    padding: 15px !important;
-    background: var(--bg-card) !important;
-    border-radius: 12px !important;
-    box-shadow: var(--shadow) !important;
-  }
-  
-  /* Education section */
-  .education-item {
-    text-align: left !important;
-    padding: 20px !important;
-    margin: 20px auto !important;
-    max-width: 100% !important;
-    background: var(--bg-card) !important;
-    border-radius: 12px !important;
-    box-shadow: var(--shadow) !important;
-  }
-  
-  .education-duration {
-    display: block !important;
-    margin-top: 10px !important;
-    color: var(--text-secondary) !important;
-  }
-  
-  /* Remove forced center alignment for specific elements */
-  .service-card, 
-  .skill-item, 
-  .testimonial-item {
-    text-align: left !important;
-  }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
-/* ===== Responsive Typography ===== */
+/* ===== My Work Section Fix ===== */
 @media (max-width: 768px) {
-  h2 {
-    font-size: 1.8rem !important;
-    margin-bottom: 1.5rem !important;
-    padding-left: 10px !important;
-    text-align: left !important;
+  .work-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 16px;
+    display: flex;
+    padding-bottom: 1rem;
   }
-  
-  p {
-    font-size: 1rem !important;
-    line-height: 1.6 !important;
-  }
-}
 
-/* ===== Card Alignment Fix ===== */
-@media (max-width: 768px) {
-  .card {
-    margin: 0 auto 30px !important;
-    max-width: 100% !important;
+  .work-slides {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 16px;
+    width: max-content;
   }
-}
-/* ===== Center Headers with Proper Content Alignment ===== */
-@media (max-width: 768px) {
-  /* Center section headers */
-  .section h2 {
-    text-align: center !important;
+
+  .work-slide {
+    min-width: 85vw;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    border-radius: 12px;
+  }
+
+  .work-card {
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 10px;
   }
 
-  /* Keep content left-aligned */
-  .about-text,
-  .education-item,
-  .stat-item p, /* For stat descriptions */
-  .education-duration {
-    text-align: left !important;
-  }
-
-  /* Center-align stats numbers only */
-  .stat-item h3 {
-    text-align: center !important;
+  .work-nav {
+    display: none;
   }
 }
+
+/* ===== Technical Skills Section ===== */
+@media (max-width: 768px) {
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .skill-item {
+    flex: 0 1 45%;
+    max-width: 45%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .skill-circle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 15px;
+  }
+
+  .skill-circle svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .skill-percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary);
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+  }
+}
+
+/* ===== Language Skills Section (Bar Skills) ===== */
+@media (max-width: 768px) {
+  #language-skills .skills-container {
+    padding: 0 20px; /* Add padding to contain the skills */
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #language-skills .skill-item {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .skill-bar-container {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
+  }
+
+  .skill-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .skill-info span:first-child {
+    text-align: left;
+  }
+
+  .skill-info span:last-child {
+    text-align: right;
+  }
+}
+/* ===== Navbar Mobile Fix with Light Mode ===== */
+@media (max-width: 768px) {
+  .navbar {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 50% !important;
+    top: auto !important;
+    transform: translateX(-50%) !important;
+    z-index: 9999 !important;
+    background: rgba(0, 0, 0, 0.85) !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 8px 0 !important;
+    border-radius: 0 !important;
+    box-shadow: 0 -2px 16px rgba(0,0,0,0.15) !important;
+    transition: none !important;
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+  }
+
+  .navbar ul {
+    display: flex !important;
+    justify-content: space-around !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+  }
+
+  .navbar ul li {
+    flex: 1 !important;
+    text-align: center !important;
+  }
+
+  .navbar ul li a {
+    font-size: 18px !important;
+    display: block !important;
+    color: white !important;
+    text-align: center !important;
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+  }
+
+  body.light-theme .navbar {
+    background-color: #fff !important;
+    color: #000 !important;
+  }
+
+  body.light-theme .navbar ul li a {
+    color: #000 !important;
+  }
+
+  body {
+    padding-bottom: 80px !important;
+  }
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .theme-toggle {
+    width: 50px;
+    height: 50px;
+    top: 20px;
+    right: 20px;
+  }
+  
+  .theme-toggle i {
+    font-size: 1.2rem;
+  }
+}
+/* Center all section text on mobile */
+@media (max-width: 768px) {
+  .about-text,
+  .about-stats,
+  .services-grid,
+  .service-card,
+  .work-container,
+  .skills-grid,
+  .skill-item,
+  .contact-form,
+  .contact-info,
+  .contact-form-form,
+  .datetime-section,
+  .testimonials-container,
+  .testimonial-item {
+    text-align: center !important;
+  }
+  .about-text {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+
+
+
