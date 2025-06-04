@@ -156,3 +156,78 @@
             height: 120px;
             resize: vertical;
         }
+  body.light-theme {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.section.light-theme,
+nav.light-theme,
+footer.light-theme {
+  background-color: #fff !important;
+  color: #111 !important;
+}
+
+.theme-toggle .fa-sun {
+  color: #111;
+}
+
+@media (max-width: 768px) {
+  body.light-theme {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+}
+
+/* Fix icon contrast in light mode */
+a.light-theme i,
+.theme-toggle.light-theme i {
+  color: #000 !important;
+}
+/*small screens */
+@media (max-width: 768px) {
+  body.light-mode .navbar {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    top: auto;
+    transform: translateX(-50%);
+    width: auto;
+    min-width: 180px;
+    max-width: 95vw;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px;
+    border-radius: 20px;
+    transition: width 0.3s, left 0.3s, bottom 0.3s, transform 0.3s;
+    z-index: 1000;
+  }
+
+  body.light-mode .navbar ul {
+    flex-direction: row;
+    gap: 15px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  body.light-mode .navbar.active {
+    width: 120px; /* Decrease width when clicked (add .active class with JS) */
+  }
+
+  body.light-mode .social-float a {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+  body.light-mode .navbar ul {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  body.light-mode .social-float a {
+    width: 40px;
+    height: 40px;
+  }
