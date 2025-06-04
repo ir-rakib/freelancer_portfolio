@@ -1446,4 +1446,63 @@ html, body {
     overflow-x: hidden;
     width: 100%;
 }
+/* === Only for mobile screens === */
+@media (max-width: 768px) {
+
+  /* My Work Section: Enable horizontal scroll only on mobile */
+  .work-slides {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    padding-bottom: 10px;
+  }
+
+  .work-slide {
+    scroll-snap-align: start;
+    min-width: 85%;
+    flex-shrink: 0;
+  }
+
+  .work-card {
+    width: 100%;
+  }
+
+  /* Technical Skills: Responsive stacking */
+  .skills-grid {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .skill-item {
+    flex: 1 1 45%;
+    max-width: 180px;
+    margin-bottom: 20px;
+  }
+
+  .skill-circle svg {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Language Skills: Center the section */
+  .skills-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .skill-bar-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .skill-info {
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
 
