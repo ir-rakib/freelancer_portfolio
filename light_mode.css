@@ -28,7 +28,7 @@
       }
       
     body.light-mode .navbar {
-      position: fixed;
+        position: fixed;
         top: 50%;
         left: 20px;
         transform: translateY(-50%);
@@ -187,6 +187,7 @@ a.light-theme i,
 /*small screens */
 @media (max-width: 768px) {
   body.light-mode .navbar {
+    width: 70% !important;
     position: fixed;
     bottom: 20px;
     left: 50%;
@@ -198,8 +199,8 @@ a.light-theme i,
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 10px 10px;
-    border-radius: 20px;
+    padding-left: 20px !important;
+    border-radius: 20px !important;
     transition: width 0.3s, left 0.3s, bottom 0.3s, transform 0.3s;
     z-index: 1000;
   }
@@ -215,19 +216,10 @@ a.light-theme i,
   body.light-mode .navbar.active {
     width: 120px; /* Decrease width when clicked (add .active class with JS) */
   }
+      body.light-mode .social-float a:hover {
+      background: var(--primary)!important;
+      transform: translateX(-5px) scale(1.1);
+      box-shadow: var(--glow)!important;
+    }
 
-  body.light-mode .social-float a {
-    width: 40px;
-    height: 40px;
-  }
 }
-
-  body.light-mode .navbar ul {
-    flex-direction: row;
-    gap: 15px;
-  }
-
-  body.light-mode .social-float a {
-    width: 40px;
-    height: 40px;
-  }
