@@ -1050,16 +1050,6 @@
         gap: 30px;
       }
       
-      .social-float {
-        position: relative;
-        right: auto;
-        top: auto;
-        transform: none;
-        flex-direction: row;
-        justify-content: center;
-        margin: 30px 0;
-      }
-      
       .section {
         padding: 60px 0;
       }
@@ -1153,7 +1143,7 @@
 .software-skill-item span {
   margin-top: 12px;
   font-weight: 500;
-  color: white; /* Changed from #334155 to white */
+  color: white;
   font-size: 1rem;
   transition: all 0.3s ease;
 }
@@ -1322,6 +1312,7 @@ html {
 /* ===== Navbar Mobile Fix with Light Mode ===== */
 @media (max-width: 768px) {
   .navbar {
+    width: 70%;
     position: fixed !important;
     bottom: 0 !important;
     left: 50% !important;
@@ -1333,7 +1324,8 @@ html {
     justify-content: center !important;
     align-items: center !important;
     padding: 8px 0 !important;
-    border-radius: 0 !important;
+    padding-left: 20px !important;
+    border-radius: 20px !important;
     box-shadow: 0 -2px 16px rgba(0,0,0,0.15) !important;
     transition: none !important;
     pointer-events: auto !important;
@@ -1363,11 +1355,10 @@ html {
     touch-action: manipulation !important;
   }
 
-  body.light-theme .navbar {
-    background-color: #fff !important;
-    color: #000 !important;
-  }
 
+  .navbar ul li a:hover {
+    color: var(--primary) !important;
+  }
   body.light-theme .navbar ul li a {
     color: #000 !important;
   }
@@ -1376,42 +1367,120 @@ html {
     padding-bottom: 80px !important;
   }
 }
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .theme-toggle {
-    width: 50px;
-    height: 50px;
-    top: 20px;
-    right: 20px;
-  }
-  
-  .theme-toggle i {
-    font-size: 1.2rem;
-  }
-}
+
 /* Center all section text on mobile */
 @media (max-width: 768px) {
-  .about-text,
-  .about-stats,
-  .services-grid,
-  .service-card,
-  .work-container,
-  .skills-grid,
-  .skill-item,
-  .contact-form,
-  .contact-info,
-  .contact-form-form,
-  .datetime-section,
-  .testimonials-container,
-  .testimonial-item {
-    text-align: center !important;
+  .section h2 {
+    text-align: center;
   }
   .about-text {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: center !important;
+  }
+  /* Center education cards */
+  .education-item {
     margin-left: auto !important;
     margin-right: auto !important;
+    float: none !important;
+  }
+  /* Center education header content */
+  .education-header {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 4px !important;
+  }
+  /* Center degree and institution text */
+  .education-degree,
+  .education-institution,
+  .education-date {
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
+  }
+  /* Center bullet lists in education */
+  .education-item ul {
+    text-align: left !important;
+    margin-left: 1.2em !important;
+    margin-right: 0 !important;
+    display: inline-block !important;
   }
 }
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .top-center-bar {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100vw !important;
+    position: fixed !important;
+    top: 10px !important;
+    left: 0 !important;
+    z-index: 1100 !important;
+    background: transparent !important;
+    pointer-events: none;
+    gap: 15px !important; /* Ensure spacing between icons and toggle */
+  }
+  .top-center-bar > * {
+    pointer-events: auto;
+  }
 
+  .social-float,
+  .theme-toggle {
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    left: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    margin: 0 !important;
+    z-index: 1000 !important;
+  }
+
+  .social-float {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 15px !important;
+    width: auto !important;
+    margin: 0 !important;
+    background: none !important;
+    box-shadow: none !important;
+    pointer-events: auto !important;
+  }
+
+  .theme-toggle {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    background: var(--bg-card) !important;
+    margin-left: 0 !important;
+    order: 99 !important;
+  }
+
+  .theme-toggle i {
+    font-size: 1.2rem !important;
+  }
+}
+@media (min-width: 769px) {
+  .social-float {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    bottom: auto;
+    left: auto;
+    transform: translateY(-50%);
+    flex-direction: column;
+    gap: 20px;
+    z-index: 1000;
+  }
+}
 
 
